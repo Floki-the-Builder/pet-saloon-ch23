@@ -13,6 +13,9 @@ function displayCards(){
                 <p>Gender: ${pet.gender}</p>
                 <p>Breed: ${pet.breed}</p>
                 <p>Services: ${pet.services}</p>
+                <p>Owner: ${pet.owner}</p>
+                <p>Phone: ${pet.Phone}</p>
+
             </div>`;
 
             petDiv.append(tmp)
@@ -25,3 +28,25 @@ function displayCards(){
 //function displayTable(){
     //  tmp='<tr><tr>
 //}
+
+function displayTable(){
+    let table = $("#petsTable");
+    table.html("");
+    for(let i=0; i<salon.pets.length; i++){
+        let pet = salon.pets[i];
+        tr = `
+        <tr>
+            <td> ${pet.name} </td>
+            <td> ${pet.age} </td>
+            <td> ${pet.gender} </td>
+            <td> ${pet.breed} </td>
+            <td> ${pet.services} </td>
+            <td> ${pet.owner} </td>
+            <td> ${pet.phone} </td>
+
+
+        </tr>`;
+
+         table.append(tr)
+    }
+}

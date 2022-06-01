@@ -31,9 +31,9 @@ function pet(name,age,gender,breed,services,owner,phome){
 }
 
 // Creating new pet with constructor
-let spike = new pet("spike", 3, "male", "doverman", "groom", "Ard", "555-666-5555");
-let ghost = new pet("ghost", 5, "male", "husky", "nails", "mike", '222 2222222');
-let grey = new pet("german sheppard", 1, "female", "husky", "nails", "julie", '323 2222222');
+let spike = new pet("Spike", 3, "male", "doverman", "groom", "Ard", "555-666-5555");
+let ghost = new pet("Ghost", 5, "male", "husky", "nails", "mike", '222 2222222');
+let grey = new pet("Grey", 1, "female", "German Shepard", "nails", "julie", '323 2222222');
 
 
 function isValid(aPet){
@@ -53,13 +53,16 @@ function register(){
     let petGender= document.getElementById('selGender').value;
     let petBreed= document.getElementById('txtBreed').value;
     let petServices= document.getElementById('selServices').value;
+    let petOwner = document.getElementById('txtOwner').value;
+    let petPhone = document.getElementById("txtPhone").value;
+
     //Vreating obj using constructor
-    let newPet = new pet(petName, petAge, petGender, petBreed, petServices)
+    let newPet = new pet(petName, petAge, petGender, petBreed, petServices, petOwner, petPhone)
     if(isValid(newPet) == true){
     // Push obj to array 
     salon.pets.push(newPet);
     // Dos[;au to console
-   displayCards();
+   displayTable();
     
     clear();
     } else {
@@ -81,7 +84,7 @@ function clear(){
 function init(){
     // displaySalonInfo()
     salon.pets.push(spike, ghost, grey)
-    displayCards();
+    displayTable();
 }
 
 // lead html, then JS to not run faster than html
